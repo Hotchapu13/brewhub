@@ -1,4 +1,4 @@
-public class LoyaltyTier implements PricingStrategy{
+public class LoyaltyTierDiscount implements PricingStrategy{
 
     @Override
     public double calculateTotal(double subtotal) {

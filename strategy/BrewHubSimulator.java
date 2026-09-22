@@ -4,6 +4,8 @@ public class BrewHubSimulator{
     public static void main(String[] args){
         Order student = new StudentOrder();
 
-        student.applyDiscount(200);
+        double studentPrice = student.applyDiscount(200);
+        
+        System.out.println("Student discount applied. Total price is: $" + studentPrice + ".");
     }
 }

@@ -3,8 +3,8 @@ public abstract class Order{
     protected PricingStrategy pricingStrategy;
     double price;
 
-    public void applyDiscount(double price){
-        pricingStrategy.calculateTotal(price);
+    public double applyDiscount(double price){
+        return price - (pricingStrategy.calculateTotal(price));
     }
 
 }
