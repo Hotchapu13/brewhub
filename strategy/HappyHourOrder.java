@@ -1,6 +1,6 @@
 public class HappyHourOrder extends Order{
     public HappyHourOrder(){
-        pricingStrategy = new HappyHour();
+        pricingStrategy = new HappyHourDiscount();
     }
 
     public void finish(){
