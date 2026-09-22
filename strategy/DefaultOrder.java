@@ -3,7 +3,7 @@ public class DefaultOrder extends Order{
         pricingStrategy = new NoDiscount();
     }
 
-    public void finish(){
+    public void display(){
         System.out.println("No discount has been applied");
     }
 }

@@ -3,7 +3,7 @@ public class LoyaltyTierOrder extends Order{
         pricingStrategy = new LoyaltyTierDiscount();
     }
 
-    public void finish(){
+    public void display(){
         System.out.println("A loyalty tier discount has been applied");
     }
 }

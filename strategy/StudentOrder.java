@@ -5,7 +5,7 @@ public class StudentOrder extends Order{
         
     }
 
-    public void finish(){
+    public void display(){
         System.out.println("A student discount has been applied. Subtotal is: ");
     }
 }

@@ -3,7 +3,7 @@ public class SeniorCitizenOrder extends Order{
         pricingStrategy = new NoDiscount();
     }
 
-    public void finish(){
+    public void display(){
         System.out.println("Only senior citizens are eligible for this discount");
     }
 }

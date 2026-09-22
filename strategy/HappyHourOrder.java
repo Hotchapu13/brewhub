@@ -3,7 +3,7 @@ public class HappyHourOrder extends Order{
         pricingStrategy = new HappyHourDiscount();
     }
 
-    public void finish(){
+    public void display(){
         System.out.println("It's Happy hour. Here's your happy hour discount");
     }
 }
