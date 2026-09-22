@@ -4,7 +4,7 @@ public abstract class Order{
     double price;
 
     public double applyDiscount(double price){
-        return price - (pricingStrategy.calculateTotal(price));
+        return pricingStrategy.calculateTotal(price);
     }
 
 }
