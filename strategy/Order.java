@@ -7,7 +7,7 @@ public abstract class Order{
         return pricingStrategy.calculateTotal(price);
     }
 
-    public void setStrategy(pricingStrategy ps){
+    public void setStrategy(PricingStrategy ps){
         pricingStrategy = ps;
     }
 
