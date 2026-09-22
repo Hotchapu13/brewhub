@@ -2,7 +2,9 @@ public class HappyHour implements PricingStrategy{
 
     @Override
     public double calculateTotal(double subtotal) {
-        return subtotal * 0.25;
+        subtotal = subtotal * 0.25;
+
+        return subtotal;
     }
 
 }
