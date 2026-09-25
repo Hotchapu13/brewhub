@@ -2,9 +2,11 @@ import java.util.*;
 
 public class OrderStatusPublisher implements Subject{
     private List<Observer> observers;
-    private boolean queued;
-    private boolean brewing;
-    private boolean ready;
+    enum status{
+        QUEUED,
+        BREWING,
+        READY
+    }
 
     public OrderStatusPublisher(){
         observers = new ArrayList<Observer>();
@@ -26,7 +28,7 @@ public class OrderStatusPublisher implements Subject{
     public void notifyObservers() {
         List<Observer> observerList = new ArrayList<Observer>(observers);
         for (Observer observer : observerList){
-            observer.update(queued, brewing, ready);
+            observer.update();
         }
     } 
 
