@@ -1,3 +1,5 @@
+# Strategy: Pricing and Loyalty Strategies
+
 ## Why the design choice?
 I used the strategy design pattern because I identified that the context of an order could have variations (multiple types of discounts). That way, I could  separate them from what stays the same.  
 

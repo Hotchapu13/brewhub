@@ -1,4 +1,4 @@
-public class KitchenDisplay implements Observer{
+public class KitchenDisplay implements Observer, DisplayElement{
     private OrderStatusPublisher orderStatusPublisher;
     private boolean queued;
     private boolean brewing;
@@ -14,5 +14,15 @@ public class KitchenDisplay implements Observer{
         this.queued = queued;
         this.brewing = brewing;
         this.ready = ready;
+    }
+
+    @Override
+    public String toString() {
+        return "KitchenDisplay";
+    }
+
+    @Override
+    public void display(){
+        System.out.println("We need these ingredients");
     }
 }

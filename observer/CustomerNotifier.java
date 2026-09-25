@@ -1,4 +1,4 @@
-public class CustomerNotifier implements Observer {
+public class CustomerNotifier implements Observer, DisplayElement {
 
     private OrderStatusPublisher orderStatusPublisher;
     private boolean queued;
@@ -16,4 +16,22 @@ public class CustomerNotifier implements Observer {
         this.brewing = brewing;
         this.ready = ready;
     }
+
+        @Override
+    public String toString() {
+        return "CustomerNotifier";
+    }
+    
+    @Override 
+    public void display(){
+        if (queued){
+            System.out.println("Your coffee has been sent in for preparation.");
+        }else if (brewing) {
+            System.out.println("Your coffee is being prepared.");
+        }else if (ready){
+            System.out.println("Your coffee is ready.");
+        }
+        
+    }
+
 }

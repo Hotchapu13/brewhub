@@ -13,16 +13,19 @@ public class OrderStatusPublisher implements Subject{
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);
+        System.out.println(o + " has subscribed");
     }
 
     @Override
     public void removeObserver(Observer o) {
         observers.remove(o);
+        System.out.println(o + " has unsubscribed");
     }
 
     @Override
     public void notifyObservers() {
-        for (Observer observer : observers){
+        List<Observer> observerList = new ArrayList<Observer>(observers);
+        for (Observer observer : observerList){
             observer.update(queued, brewing, ready);
         }
     } 
@@ -36,6 +39,10 @@ public class OrderStatusPublisher implements Subject{
         this.brewing = brewing;
         this.ready = ready;
         statusChanged();
+    }
+
+    public String showSubscribers() {
+        return observers.toString();
     }
     
 }
