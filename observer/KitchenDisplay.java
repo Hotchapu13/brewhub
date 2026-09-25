@@ -1,8 +1,5 @@
 public class KitchenDisplay implements Observer, DisplayElement{
     private OrderStatusPublisher orderStatusPublisher;
-    private boolean queued;
-    private boolean brewing;
-    private boolean ready;
 
     public KitchenDisplay(OrderStatusPublisher orderStatusPublisher){
         this.orderStatusPublisher = orderStatusPublisher;
@@ -10,10 +7,9 @@ public class KitchenDisplay implements Observer, DisplayElement{
     }
 
     @Override
-    public void update(boolean queued, boolean brewing, boolean ready) {
-        this.queued = queued;
-        this.brewing = brewing;
-        this.ready = ready;
+    public void update() {
+        OrderStatusPublisher.Status status = orderStatusPublisher.getStatus();
+        display(status);
     }
 
     @Override
@@ -21,8 +17,18 @@ public class KitchenDisplay implements Observer, DisplayElement{
         return "KitchenDisplay";
     }
 
-    @Override
-    public void display(){
-        System.out.println("We need these ingredients");
+    @Override 
+    public void display(OrderStatusPublisher.Status status){
+       switch (status) {
+        case QUEUED:
+            System.out.println("Move order to active station");
+            break;
+        case BREWING:
+            System.out.println("Start Preparation timer");
+            break;
+        case READY:
+            System.out.println("Clear order from kitchen view");
+       }
+        
     }
 }

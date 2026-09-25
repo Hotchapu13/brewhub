@@ -22,7 +22,7 @@ public class CustomerNotifier implements Observer, DisplayElement {
     public void display(OrderStatusPublisher.Status status){
        switch (status) {
         case QUEUED:
-            System.out.println("Your order has been queued");
+            System.out.println("Order Received!");
             break;
         case BREWING:
             System.out.println("Your order is brewing");
