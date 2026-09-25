@@ -15,6 +15,6 @@ public class BrewHubCafe {
 
         statusPublisher.removeObserver(inventoryTracker);
         System.out.println(statusPublisher.showSubscribers());
-        statusPublisher.setStatus(OrderStatusPublisher.Status.BREWING)
+        statusPublisher.setStatus(OrderStatusPublisher.Status.BREWING);
     }
 }
