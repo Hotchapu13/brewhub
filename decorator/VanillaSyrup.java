@@ -6,7 +6,7 @@ public class VanillaSyrup extends CondimentDecorator {
 
     @Override
     public String getDescription(){
-        return "Vanilla Syrup";
+        return beverage.getDescription() + ", Vanilla Syrup";
     }
 
     @Override

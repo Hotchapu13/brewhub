@@ -4,7 +4,13 @@ public class BrewHubCoffee{
 
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
 
-        Beverage beverage2 = new HouseBlend();
-        
+        Beverage beverage2 = new MatchaLatte();
+        beverage2 = new Soy(beverage2);
+        beverage2 = new CaramelDrizzle(beverage2);
+        beverage2 = new VanillaSyrup(beverage2);
+        beverage2 = new Mocha(beverage2);
+
+        System.out.println(beverage2.getDescription() + " $" + String.format("%.2f", beverage2.cost()));
+
     }
 }

@@ -6,7 +6,7 @@ public class CaramelDrizzle extends CondimentDecorator {
 
     @Override
     public String getDescription() {
-        return "Caramel Drizzle";
+        return beverage.getDescription() + ", Caramel Drizzle";
     }
 
     @Override
