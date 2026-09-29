@@ -4,6 +4,20 @@
 This milestone required the observer design pattern since three different parts of the entire BrewHub system required data from a single source of truth for them to be utilized for their functions. This created the need for a subject-observer paradigm where mutliple observers are notified when the subject changes state.
 
 ## Push vs Pull: Do you send full order data, or let observers ask for it? Justify your choice
-In a real world system, KitchenDisplay, CustomerNotifier and InventoryTracker would require different slices of data from each other. It would be needless for the subject to send the full order data to all the observers because some parts of it will be used and the rest will probably go unused. 
-The CustomerNotifier class is the only one that actually requires the exact data being provided by the OrderStatusPublisher class. The KitchenDisplay could require extra information such as special instructions from the person making the order, the ingredients required etc. and the InvontoryTracker class only needs to know when an order is brewing for it to know what ingredients are being used so that inventory records can be updated.
+
+All three observers currently read the same order status field, so push and pull deliver
+identical information today; `InventoryTracker` simply acts on fewer of that field's values
+than `KitchenDisplay` or `CustomerNotifier` do. The real argument for pull isn't about what the
+current three observers use, it's about what adding a fourth would cost.
+
+Under push, `update()`'s signature (or the data bundled with it) has to grow every time a new
+kind of observer needs a new kind of information — adding, say, an `AuditLogger` that wants a
+timestamp of when the status changed would mean changing what gets passed to every existing
+observer, whether they care about timestamps or not. Under pull, `OrderStatusPublisher` just
+exposes a new getter, and `AuditLogger` calls it; `KitchenDisplay`, `CustomerNotifier`, and
+`InventoryTracker` need no changes at all.
+
+Pull was chosen so that `OrderStatusPublisher` can grow new kinds of exposed data over time
+without forcing every observer's `update()` to be touched. Observers stay coupled only to the
+specific getters they actually call, not to a shared payload shape.
 
