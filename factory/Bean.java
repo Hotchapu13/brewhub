@@ -7,7 +7,7 @@ public abstract class Bean {
 
 
     public void dry(){
-        System.out.println("Preparing " + name);
+        System.out.println("\nPreparing " + name);
         System.out.println("Spreading the beans...");
         System.out.println("Beans drying...");
     };
