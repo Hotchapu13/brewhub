@@ -8,11 +8,11 @@ public class CoffeeOrderTest {
         Bean bean2 =  seattleRoastingHub.orderBean("medium");
         Bean bean3 = bogotaRoastingHub.orderBean("light");
 
-        System.out.println("I have ordered for " + bean1.getName() + "\n");
+        System.out.println("\nI have ordered for " + bean1.getName());
 
-        System.out.println("I have ordered for " + bean2.getName() + "\n");
+        System.out.println("\nI have ordered for " + bean2.getName());
 
-        System.out.println("I have ordered for " + bean3.getName() + "\n");
+        System.out.println("\nI have ordered for " + bean3.getName());
 
 
 
