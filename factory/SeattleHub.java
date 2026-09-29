@@ -1,8 +1,7 @@
 public class SeattleHub extends RoastingHub {
 
     @Override
-    public Bean createBean(String type){
-        Bean bean;
+    public Bean sourceBean(String type){
 
         if(type.equals("dark")){
             return new SeattleDarkBean();

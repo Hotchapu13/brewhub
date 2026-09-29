@@ -1,5 +1,9 @@
 public class MbararaDarkBean extends Bean{
     public MbararaDarkBean(){
-        System.out.println("Mbarara Dark Bean");
+        name = "Mbarara Dark bean";
+        roastLevel = "Dark";
+        species = "Robusta";
+
+        System.out.println("Sourced " + getName());
     }
 }

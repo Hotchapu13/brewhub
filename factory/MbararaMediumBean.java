@@ -1,5 +1,9 @@
 public class MbararaMediumBean extends Bean{
-    public MbararaMediumBean(){
-        System.out.println("Mbarara Medium Bean");
+   public MbararaMediumBean(){
+        name = "Mbarara medium bean";
+        roastLevel = "Medium";
+        species = "Robusta";
+
+        System.out.println("Sourced " + getName());
     }
 }

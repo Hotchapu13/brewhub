@@ -1,7 +1,7 @@
 public class BogotaHub extends RoastingHub{
 
     @Override
-    public Bean createBean(String type){
+    public Bean sourceBean(String type){
         Bean bean;
 
         if(type.equals("dark")){

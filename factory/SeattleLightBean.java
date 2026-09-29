@@ -1,5 +1,9 @@
 public class SeattleLightBean extends Bean {
     public SeattleLightBean(){
-        System.out.println("Seattle Light Bean");
+        name = "Seattle light bean";
+        roastLevel = "Light";
+        species = "Arabica";
+
+        System.out.println("Sourced " + getName());
     }
 }

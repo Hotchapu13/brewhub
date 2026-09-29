@@ -1,5 +1,9 @@
 public class SeattleDarkBean extends Bean {
     public SeattleDarkBean(){
-        System.out.println("Seattle Dark Bean");
+        name = "Seattle dark bean";
+        roastLevel = "Dark";
+        species = "Arabica";
+
+        System.out.println("Sourced " + getName());
     }
 }

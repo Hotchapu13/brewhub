@@ -1,10 +1,9 @@
-import java.util.* 
+import java.util.*;
 
 public abstract class Bean {
     String name;
     String roastLevel;
     String species;
-    List<String> flavourNotes = new ArrayList<String>();
 
 
     public void dry(){

@@ -5,12 +5,12 @@ public abstract class RoastingHub {
     //     this.factory = factory;
     // }
 
-    protected abstract Bean createBean(String type);
+    protected abstract Bean sourceBean(String type);
 
     public Bean orderBean(String type){
         Bean bean;
 
-        bean = createBean(type);
+        bean = sourceBean(type);
 
         bean.dry();
         bean.brown();

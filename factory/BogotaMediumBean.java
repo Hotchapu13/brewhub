@@ -1,5 +1,9 @@
 public class BogotaMediumBean extends Bean {
     public BogotaMediumBean(){
-        System.out.println("Bogota Medium Bean");
+        name = "Bogota medium bean";
+        roastLevel = "Medium";
+        species = "Liberica";
+
+        System.out.println("Sourced " + getName());
     }
 }

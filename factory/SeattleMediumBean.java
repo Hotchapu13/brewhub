@@ -1,5 +1,9 @@
 public class SeattleMediumBean extends Bean {
     public SeattleMediumBean(){
-        System.out.println("Seattle Medium Bean");
+        name = "Seattle medium bean";
+        roastLevel = "Medium";
+        species = "Arabica";
+
+        System.out.println("Sourced " + getName());
     }
 }
