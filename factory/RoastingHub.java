@@ -1,18 +1,22 @@
-public class RoastingHub {
+public abstract class RoastingHub {
     SimpleBeanFactory factory;
 
-    public RoastingHub(SimpleBeanFactory factory) {
-        this.factory = factory;
-    }
+    // public RoastingHub(SimpleBeanFactory factory) {
+    //     this.factory = factory;
+    // }
 
-    Bean orderBean(String type){
+    abstract Bean createBean(String type);
+    
+    public Bean orderBean(String type){
         Bean bean;
 
-        bean = factory.createBean(type);
+        bean = createBean(type);
 
         bean.dry();
         bean.brown();
         bean.crack();
         bean.pack();
+
+        return bean;
     }
 }
