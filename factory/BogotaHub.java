@@ -2,13 +2,14 @@ public class BogotaHub extends RoastingHub{
 
     @Override
     public Bean createBean(String type){
+        Bean bean;
 
         if(type.equals("dark")){
-            // Implement type
+            return new BogotaDarkBean();
         }else if (type.equals("medium")){
-            //Implement type
+            return new BogotaMediumBean();
         }else if (type.equals("light")) {
-            // Implement type
+            return new BogotaLightBean();
         }
     }
 }

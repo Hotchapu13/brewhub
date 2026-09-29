@@ -2,13 +2,14 @@ public class SeattleHub extends RoastingHub {
 
     @Override
     public Bean createBean(String type){
+        Bean bean;
 
         if(type.equals("dark")){
-            // Implement type
+            return new SeattleDarkBean();
         }else if (type.equals("medium")){
-            //Implement type
+            return new SeattleMediumBean();
         }else if (type.equals("light")) {
-            // Implement type
-        }
+            return new SeattleLightBean();
+        } else return null;
     }
 }
