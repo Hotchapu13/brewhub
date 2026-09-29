@@ -1,5 +1,5 @@
 public abstract class RoastingHub {
-    SimpleBeanFactory factory;
+    // SimpleBeanFactory factory;
 
     // public RoastingHub(SimpleBeanFactory factory) {
     //     this.factory = factory;

@@ -10,6 +10,6 @@ public class BogotaHub extends RoastingHub{
             return new BogotaMediumBean();
         }else if (type.equals("light")) {
             return new BogotaLightBean();
-        }
+        }else return null;
     }
 }

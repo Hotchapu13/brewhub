@@ -1,15 +1,32 @@
+import java.util.* 
+
 public abstract class Bean {
+    String name;
+    String roastLevel;
+    String species;
+    List<String> flavourNotes = new ArrayList<String>();
+
+
     public void dry(){
-        System.out.println("Coffee beans drying");
+        System.out.println("Preparing " + name);
+        System.out.println("Spreading the beans...");
+        System.out.println("Beans drying...");
     };
+
     public void brown(){
-        System.out.println("Browing coffee beans");
+        System.out.println("Browning coffee beans...");
     };
+
     public void crack(){
-        System.out.println("Cracking coffee beans");
+        System.out.println("Cracking coffee beans...");
     };
+
     public void pack(){
-        System.out.println("Packing coffee beans");
+        System.out.println("Packing coffee beans in their bags...");
     };
+
+    public String getName(){
+        return name;
+    }
 
 }

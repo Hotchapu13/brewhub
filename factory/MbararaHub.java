@@ -1,7 +1,7 @@
 public class MbararaHub extends RoastingHub {
 
     @Override 
-    Bean createBean(String type){
+    public Bean createBean(String type){
         if (type.equals("dark")){
             return new MbararaDarkBean();
         } else if (type.equals("medium")){
