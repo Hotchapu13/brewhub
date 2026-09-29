@@ -5,8 +5,8 @@ public abstract class RoastingHub {
     //     this.factory = factory;
     // }
 
-    abstract Bean createBean(String type);
-    
+    protected abstract Bean createBean(String type);
+
     public Bean orderBean(String type){
         Bean bean;
 
