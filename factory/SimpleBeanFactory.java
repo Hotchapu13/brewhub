@@ -1,4 +1,4 @@
-public class BeanFactory {
+public class SimpleBeanFactory {
     public Bean createBean(String type) {
         Bean bean = null;
 
