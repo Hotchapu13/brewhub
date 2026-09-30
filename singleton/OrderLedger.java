@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class OrderLedger {
+public class OrderLedger implements Observer {
 
     private static final OrderLedger INSTANCE = new OrderLedger();
 
@@ -25,6 +25,7 @@ public class OrderLedger {
 
     // list of orders
     private final List<Order> orders;
+    private OrderStatusPublisher activePublisher;
 
     private OrderLedger(){
         this.orders = Collections.synchronizedList(new ArrayList<>());
@@ -36,6 +37,20 @@ public class OrderLedger {
 
     public void addOrder(Order order) {
         orders.add(order);
+    }
+
+    // Observer pattern: the ledger subscribes to an order's status updates
+    // and only records the transaction once the order reaches READY.
+    public void subscribeTo(OrderStatusPublisher publisher) {
+        this.activePublisher = publisher;
+        publisher.registerObserver(this);
+    }
+
+    @Override
+    public void update() {
+        if (activePublisher.getStatus() == OrderStatusPublisher.Status.READY) {
+            addOrder(new Order(activePublisher.getOrderId(), "Coffee Order", 0.0, "SALE"));
+        }
     }
 
     public List<Order> getOrders() {

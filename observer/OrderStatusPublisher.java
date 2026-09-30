@@ -8,9 +8,15 @@ public class OrderStatusPublisher implements Subject{
         READY
     }
     Status status;
+    private final String orderId;
 
-    public OrderStatusPublisher(){
+    public OrderStatusPublisher(String orderId){
+        this.orderId = orderId;
         observers = new ArrayList<Observer>();
+    }
+
+    public String getOrderId(){
+        return this.orderId;
     }
 
     @Override
