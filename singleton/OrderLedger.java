@@ -2,7 +2,7 @@ import java.util.*;
 
 public class OrderLedger {
 
-    private static volatile OrderLedger uniqueInstance;
+    private static final OrderLedger INSTANCE = new OrderLedger();
 
     public static class Order {
         public String id;
@@ -31,15 +31,7 @@ public class OrderLedger {
     }
 
     public static OrderLedger getInstance(){
-        // use double check locking
-        if(uniqueInstance == null){
-            synchronized(OrderLedger.class){
-                if(uniqueInstance == null){
-                    uniqueInstance = new OrderLedger();
-                }                
-            }
-        }
-        return uniqueInstance;
+        return INSTANCE;
     }
 
     public void addOrder(Order order) {
